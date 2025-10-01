@@ -1,0 +1,44 @@
+<div class="summary-page">
+  <h2 class="summary-page__title">Summary</h2>
+
+  <div *ngIf="invalid" class="summary-page__error">
+    {{ message }}
+  </div>
+
+  <div *ngIf="!invalid && data" class="summary-page__card">
+    <h3 class="summary-page__section-title">Account</h3>
+    <p class="summary-page__info"><strong>Full Name:</strong> {{ data.account?.fullName }}</p>
+    <p class="summary-page__info"><strong>Email:</strong> {{ data.account?.email }}</p>
+    <p class="summary-page__info"><strong>Phone:</strong> {{ data.account?.phone }}</p>
+
+    <h3 class="summary-page__section-title">Status</h3>
+    <span class="summary-page__status" [ngClass]="data.status || 'unpaid'">
+      {{ data.status || 'unpaid' }}
+    </span>
+
+    <div class="summary-page__actions">
+      <button
+        class="summary-page__btn summary-page__btn--exit"
+        (click)="openConfirmDialog()"
+      >
+        Exit
+      </button>
+      <button
+        class="summary-page__btn summary-page__btn--pay"
+        *ngIf="data.status !== 'paid'"
+        [disabled]="loading"
+        (click)="simulatePayment()"
+      >
+        {{ loading ? 'Processing...' : 'Pay Now' }}
+      </button>
+    </div>
+
+    <p class="summary-page__note">*This is a simulated payment process.</p>
+    <p class="summary-page__message" *ngIf="message">{{ message }}</p>
+  </div>
+
+  <app-confirm-exit-dialog
+    *ngIf="showConfirmDialog"
+    (confirmed)="onDialogClose($event)"
+  ></app-confirm-exit-dialog>
+</div>

@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+button, .btn {
+  background: #007aff;
+  color: white;
+  border: solid 1px #007aff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+
+  &--outline {
+    background-color: transparent;
+    border: solid 1px #111111;
+    color: #111111;
+  }
+
+  &:disabled {
+    background-color: #b3becb !important;
+    border-color: #b3becb;
+    color: #6e7a87 !important;
+    cursor: not-allowed !important;
+  }
+}

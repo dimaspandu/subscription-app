@@ -1,0 +1,37 @@
+<div class="packages">
+  <div class="packages__form">
+    <h2 class="packages__title">Choose Your Package</h2>
+    <p class="packages__subtitle">
+      Select the subscription package that fits your needs.
+    </p>
+
+    <div class="packages__list">
+      <label *ngFor="let pkg of packages" class="packages__card">
+        <input
+          type="radio"
+          name="plan"
+          [value]="pkg.id"
+          [(ngModel)]="selectedPackage"
+          class="packages__radio"
+        />
+        <div class="packages__info">
+          <strong class="packages__name">{{ pkg.name }}</strong>
+          <p class="packages__desc">{{ pkg.desc }}</p>
+          <span class="packages__price">{{ pkg.price }}</span>
+        </div>
+      </label>
+    </div>
+
+    <div class="packages__actions">
+      <button class="btn btn--outline" (click)="goBack()">Back</button>
+      <button
+        class="btn"
+        type="button"
+        [disabled]="!selectedPackage"
+        (click)="submitForm()"
+      >
+        Next Step
+      </button>
+    </div>
+  </div>
+</div>

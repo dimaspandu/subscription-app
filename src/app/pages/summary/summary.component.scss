@@ -1,0 +1,132 @@
+.summary-page {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+
+  &__error {
+    margin: 1rem 0;
+    color: #d9534f;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &__card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @media (max-width: 600px) {
+      padding: 1.25rem;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.25rem;
+  }
+
+  &__info {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+
+    strong {
+      font-weight: 600;
+      color: #000;
+    }
+  }
+
+  &__status {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    width: fit-content;
+
+    &.unpaid {
+      background-color: #fff4e5;
+      color: #ff9800;
+    }
+
+    &.paid {
+      background-color: #e8f5e9;
+      color: #4caf50;
+    }
+  }
+
+  &__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    min-width: 140px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &--pay {
+      background-color: #007aff;
+      color: #fff;
+
+      &:hover {
+        background-color: #0062cc;
+      }
+    }
+
+    &--exit {
+      background-color: #f44336;
+      color: #fff;
+
+      &:hover {
+        background-color: #d32f2f;
+      }
+    }
+  }
+
+  &__note {
+    color: #888;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__message {
+    color: #4caf50;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.25rem;
+    width: 100vw;
+  }
+}

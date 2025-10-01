@@ -1,0 +1,26 @@
+<div class="payment">
+  <div class="payment__form">
+    <h2 class="payment__title">Select Payment Method</h2>
+    <p class="payment__subtitle">Choose your preferred payment option.</p>
+
+    <div class="payment__methods">
+      <label *ngFor="let m of methods" class="payment__card">
+        <input
+          type="radio"
+          name="method"
+          [value]="m.id"
+          [(ngModel)]="method"
+          class="payment__radio"
+        />
+        <span class="payment__name">{{ m.name }}</span>
+      </label>
+    </div>
+
+    <div class="payment__actions">
+      <button class="btn btn--outline" (click)="goBack()">Back</button>
+      <button class="btn" type="button" [disabled]="!method" (click)="submitForm()">
+        Next Step
+      </button>
+    </div>
+  </div>
+</div>

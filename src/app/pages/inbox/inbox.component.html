@@ -1,0 +1,16 @@
+<div class="inbox-page">
+  <h2 class="inbox-page__title">Your Inbox</h2>
+  <p class="inbox-page__description">
+    This is a simulation of an email containing your registration access link.
+  </p>
+
+  <div class="inbox-page__card" *ngIf="token && preview">
+    <p class="inbox-page__info"><strong>Email:</strong> {{ preview.email }}</p>
+    <p class="inbox-page__info"><strong>Phone:</strong> {{ preview.phone }}</p>
+    <button class="inbox-page__button" (click)="goToSummary()">Open Summary</button>
+  </div>
+
+  <div class="inbox-page__error" *ngIf="!token">
+    No inbox data found.
+  </div>
+</div>

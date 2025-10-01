@@ -1,0 +1,29 @@
+<div class="landing-page">
+  <div class="landing-page__card">
+    <h1 class="landing-page__title">Check Your Subscription</h1>
+    <p class="landing-page__description">Enter your email address to see your registration status.</p>
+
+    <input
+      class="landing-page__input"
+      [(ngModel)]="input"
+      placeholder="Email address"
+      type="email"
+      required
+    />
+
+    <button 
+      class="landing-page__button" 
+      (click)="check()" 
+      [disabled]="loading"
+    >
+      {{ loading ? 'Checking...' : 'Check My Status' }}
+    </button>
+
+    <p class="landing-page__error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <p class="landing-page__cta">
+      Not subscribed yet?
+      <a class="landing-page__link" (click)="goToRegister()">Register here</a>
+    </p>
+  </div>
+</div>

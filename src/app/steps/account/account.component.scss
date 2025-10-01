@@ -1,0 +1,106 @@
+.account {
+  margin-top: 96px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+
+  &__form {
+    flex: 1 1 60ch;
+    min-width: 300px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  &__heading {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #212121;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  &__label {
+    display: block;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafafa;
+    font-family: inherit;
+
+    &:focus {
+      border-color: #007aff;
+      box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2);
+      outline: none;
+      background-color: #fff;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    gap: 0.5rem;
+
+    .account__select {
+      flex: 0 0 100px;
+    }
+
+    .account__input {
+      flex: 1;
+    }
+  }
+
+  &__error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+
+  &__actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 600px) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn--outline {
+        order: -1;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.25rem;
+    
+    &__form {
+      padding: 1.25rem;
+    }
+  }
+}

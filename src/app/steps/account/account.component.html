@@ -1,0 +1,69 @@
+<div class="account">
+  <div class="account__form">
+    <h2 class="account__heading">Account Information</h2>
+    <p class="account__subtitle">
+      Provide accurate information to ensure proper record-keeping and effective communication.
+    </p>
+
+    <form (ngSubmit)="submitForm()" #form="ngForm" class="account__form-body">
+      <label class="account__label">Full Name</label>
+      <input
+        type="text"
+        [(ngModel)]="fullName"
+        name="fullName"
+        required
+        class="account__input"
+      />
+      <div *ngIf="form.submitted && !fullName" class="account__error">Required</div>
+
+      <label class="account__label">Phone Number</label>
+      <div class="account__phone">
+        <select class="account__select">
+          <option value="+62">🇮🇩 +62</option>
+          <option value="+20">🇪🇬 +20</option>
+          <option value="+1">🇺🇸 +1</option>
+        </select>
+        <input
+          type="text"
+          [(ngModel)]="phone"
+          name="phone"
+          required
+          class="account__input"
+        />
+      </div>
+      <div *ngIf="form.submitted && !phone" class="account__error">Required</div>
+
+      <label class="account__label">Email Address</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+        class="account__input"
+      />
+      <div *ngIf="form.submitted && !email" class="account__error">Required</div>
+
+      <label class="account__label">Password</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        class="account__input"
+      />
+      <div *ngIf="form.submitted && !password" class="account__error">Required</div>
+
+      <div class="account__actions">
+        <button class="btn btn--outline" (click)="goBack()">Back</button>
+        <button
+          type="button"
+          [disabled]="form.invalid"
+          (click)="submitForm()"
+          class="account__button"
+        >
+          Next Step
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="confirm-exit-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+  <div class="confirm-exit-dialog__backdrop"></div>
+
+  <div class="confirm-exit-dialog__content">
+    <h2 id="dialog-title" class="confirm-exit-dialog__title">Confirm Exit</h2>
+    <p class="confirm-exit-dialog__message">Are you sure you want to exit and clear your session?</p>
+
+    <div class="confirm-exit-dialog__actions">
+      <button class="confirm-exit-dialog__btn" (click)="close(false)">Cancel</button>
+      <button class="confirm-exit-dialog__btn confirm-exit-dialog__btn--danger" (click)="close(true)">Yes, Exit</button>
+    </div>
+  </div>
+</div>

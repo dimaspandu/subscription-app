@@ -1,0 +1,111 @@
+.packages {
+  margin-top: 96px;
+  padding: 2rem;
+  font-family: inherit;
+
+  &__form {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      border-color: #007aff;
+      background-color: #f0f7ff;
+    }
+
+    &.selected {
+      border-color: #007aff;
+      background-color: #e3f2fd;
+    }
+  }
+
+  &__radio {
+    margin-top: 0.3rem;
+    accent-color: #007aff;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+  }
+
+  &__price {
+    font-weight: bold;
+    color: #007aff;
+    font-size: 1rem;
+  }
+
+  &__actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 600px) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn--outline {
+        order: -1;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.25rem;
+    
+    &__form {
+      padding: 1.25rem;
+    }
+  }
+}
+
