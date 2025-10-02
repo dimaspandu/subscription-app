@@ -38,6 +38,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Sequence Diagram
 ![Sequence Diagram](doc/demo-flow.sequence-diagram.png)
+![Sequence Diagram](doc/reactive-state-transition.sequence-diagram.png)
+
+### Flowchart Diagram
+![Flowchart Diagram](doc/compre.flowchart.png)
 
 ### Architecture Diagram
 ![Architecture Diagram](doc/demo-stack.architecture-diagram.png)
